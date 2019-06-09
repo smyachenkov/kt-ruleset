@@ -1,0 +1,4 @@
+rootProject.name = 'kt-rulesets'
+include ':ktlint-rules'
+include ':detekt-rules'
+include ':demo'
