@@ -9,11 +9,4 @@ dependencies {
     testCompile "io.gitlab.arturbosch.detekt:detekt-test:$detektVersion"
     compileOnly "io.gitlab.arturbosch.detekt:detekt-api:$detektVersion"
     testCompile "junit:junit:4.12"
-    implementation 'com.github.smyachenkov:kt-ruleset:detekt-rules:master-SNAPSHOT'
-}
-
-allprojects {
-    repositories {
-        maven { url "https://jitpack.io" }
-    }
 }
