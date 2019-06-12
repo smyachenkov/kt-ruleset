@@ -1,0 +1,19 @@
+<idea-plugin>
+    <id>com.smyachenkov.kt-custom-inspection-plugin</id>
+    <name>idea-rulesets</name>
+    <vendor email="s.myachenkov@gmail.com" url="http://smyachenkov.com">Stanislav Myachenkov</vendor>
+    <description>Custom Kotlin ruleset for IDEA inspections</description>
+    <depends>org.jetbrains.kotlin</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection language="kotlin"
+                         displayName="No empty line in method body is allowed"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="WARNING"
+                             implementationClass="com.smyachenkov.NoEmptyLineInMethodBodyInspection"/>
+    </extensions>
+    <actions>
+    </actions>
+</idea-plugin>
