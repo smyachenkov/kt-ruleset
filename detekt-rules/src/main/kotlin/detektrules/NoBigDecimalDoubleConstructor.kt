@@ -22,7 +22,6 @@ class NoBigDecimalDoubleConstructor(config: Config = Config.empty) : Rule(config
     )
 
     override fun visitCallExpression(expression: KtCallExpression) {
-        print(expression)
         if (expression.firstChild.text == "BigDecimal"
                 && (expression.lastChild as KtValueArgumentList).elementType == KtNodeTypes.VALUE_ARGUMENT_LIST) {
             val constructorArguments = expression.lastChild.children
