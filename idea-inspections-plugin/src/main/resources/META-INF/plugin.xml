@@ -13,6 +13,14 @@
                          enabledByDefault="true"
                          level="WARNING"
                              implementationClass="com.smyachenkov.NoEmptyLineInMethodBodyInspection"/>
+        <localInspection language="kotlin"
+                         displayName="Function name is too long"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="com.smyachenkov.FunctionNameLengthInspection"/>
     </extensions>
     <actions>
     </actions>
