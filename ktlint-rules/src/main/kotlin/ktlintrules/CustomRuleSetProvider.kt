@@ -7,6 +7,7 @@ class CustomRuleSetProvider : RuleSetProvider {
     override fun get() = RuleSet(
             "smyachenkov",
             NoBigDecimalDoubleConstructor(),
-            NoEmptyLineInMethodBody()
+            NoEmptyLineInMethodBody(),
+            FunctionNameLength()
     )
 }

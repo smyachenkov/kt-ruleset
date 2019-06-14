@@ -12,7 +12,8 @@ class CustomRuleSetProvider : RuleSetProvider {
             ruleSetId,
             listOf(
                     NoBigDecimalDoubleConstructor(config),
-                    NoEmptyLineInMethodBody(config)
+                    NoEmptyLineInMethodBody(config),
+                    FunctionNameLength(config)
             )
     )
 
