@@ -1,7 +1,7 @@
 package ktlintrules
 
-import com.github.shyiko.ktlint.core.Rule
-import com.github.shyiko.ktlint.core.ast.nextCodeLeaf
+import com.pinterest.ktlint.core.Rule
+import com.pinterest.ktlint.core.ast.nextCodeLeaf
 import org.jetbrains.kotlin.KtNodeTypes
 import org.jetbrains.kotlin.com.intellij.lang.ASTNode
 import org.jetbrains.kotlin.lexer.KtTokens

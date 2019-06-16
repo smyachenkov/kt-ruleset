@@ -1,6 +1,6 @@
 package ktlintrules
 
-import com.github.shyiko.ktlint.test.lint
+import com.pinterest.ktlint.test.lint
 import org.junit.Assert.*
 import org.junit.Test
 
