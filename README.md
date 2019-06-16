@@ -4,3 +4,4 @@
 
 Custom rulesets for Kotlin static analysis tools.
 
+Demo project for http://smyachenkov.com/posts/kotlin-static-analysis-tools/ post.
