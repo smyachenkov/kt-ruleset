@@ -1,0 +1,55 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+repositories {
+    jcenter()
+}
+
+configurations {
+    ktlint
+    detekt
+}
+
+sourceCompatibility = 1.8
+
+dependencies {
+    ktlint "com.pinterest:ktlint:$ktlintVersion"
+    detekt project(":detekt-rules")
+    ktlint project(":ktlint-rules")
+    detekt "io.gitlab.arturbosch.detekt:detekt-cli:$detektVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    main = "com.pinterest.ktlint.Main"
+    classpath = configurations.ktlint
+    args "src/**/*.kt"
+}
+
+task detekt(type: JavaExec, group: "verification") {
+    main = "io.gitlab.arturbosch.detekt.cli.Main"
+    classpath = project.configurations.detekt
+    args "--config", "detekt.yml",
+         "--input", project.file("."),
+         "--report", "txt:$project.buildDir/plain.txt," +
+                     "xml:$project.buildDir/checkstyle.xml," + 
+                     "html:$project.buildDir/report.html"
+
+
+}
+
+// uncomment the following line to use ktlint and detekt tasks in build
+// check.dependsOn ktlint, detekt
