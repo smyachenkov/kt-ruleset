@@ -8,6 +8,6 @@ Demo project for http://smyachenkov.com/posts/kotlin-static-analysis-tools/ post
 
 ## How to run
 
-`gradle :demo:detekt` — to run detekt validation on demo project.  
-`gradle :demo:ktlint` — to run ktlint validation on demo project.  
-`gradle :idea-inspections-plugin:runIde` — to start Intellij IDEA with a custom inspection plugin.
+`gradle :demo:detekt` — run detekt validation on demo project.  
+`gradle :demo:ktlint` — run ktlint validation on demo project.  
+`gradle :idea-inspections-plugin:runIde` — start Intellij IDEA with a custom inspection plugin.
