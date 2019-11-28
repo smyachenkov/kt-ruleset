@@ -1,10 +1,13 @@
-apply plugin: "kotlin"
+plugins {
+    id "kotlin"
+}
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     testCompile "io.gitlab.arturbosch.detekt:detekt-api:$detektVersion"
     testCompile "io.gitlab.arturbosch.detekt:detekt-test:$detektVersion"
     compileOnly "io.gitlab.arturbosch.detekt:detekt-api:$detektVersion"

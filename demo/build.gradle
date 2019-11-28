@@ -1,29 +1,15 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    }
-}
-
 plugins {
-    id 'java'
-    id 'org.jetbrains.kotlin.jvm'
+    id 'kotlin'
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 configurations {
     ktlint
     detekt
 }
-
-sourceCompatibility = 1.8
 
 dependencies {
     ktlint "com.pinterest:ktlint:$ktlintVersion"
@@ -43,12 +29,10 @@ task detekt(type: JavaExec, group: "verification") {
     main = "io.gitlab.arturbosch.detekt.cli.Main"
     classpath = project.configurations.detekt
     args "--config", "detekt.yml",
-         "--input", project.file("."),
-         "--report", "txt:$project.buildDir/plain.txt," +
-                     "xml:$project.buildDir/checkstyle.xml," + 
-                     "html:$project.buildDir/report.html"
-
-
+            "--input", project.file("."),
+            "--report", "txt:$project.buildDir/plain.txt," +
+            "xml:$project.buildDir/checkstyle.xml," +
+            "html:$project.buildDir/report.html"
 }
 
 // uncomment the following line to use ktlint and detekt tasks in build
