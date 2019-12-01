@@ -3,7 +3,8 @@ plugins {
 }
 
 repositories {
-    mavenCentral()
+    //mavenCentral() Gradle Plugin missing jcommander:1.74 dependency
+    jcenter()
 }
 
 configurations {

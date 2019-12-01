@@ -2,23 +2,18 @@ buildscript {
     ext.kotlinVersion = "1.3.60"
     ext.ktlintVersion = "0.33.0"
     ext.detektVersion = "1.0.0-RC14"
-    ext.versionsVersion = "0.21.0"
 
     repositories {
         mavenCentral()
         google()
         gradlePluginPortal()
+        jcenter()
     }
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "com.github.ben-manes:gradle-versions-plugin:$versionsVersion"
+        classpath "com.android.tools.build:gradle:3.3.0-beta04"
     }
-}
-
-plugins {
-    id "org.jetbrains.kotlin.jvm" version "$kotlinVersion"
-    id "com.github.ben-manes.versions" version "$versionsVersion"
 }
 
 wrapper {
