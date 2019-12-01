@@ -1,0 +1,22 @@
+plugins {
+    id "kotlin"
+}
+
+repositories {
+    google()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compileOnly "com.android.tools.lint:lint-api:$lintVersion"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    testImplementation "com.android.tools.lint:lint:$lintVersion"
+    testImplementation "com.android.tools.lint:lint-tests:$lintVersion"
+}
+
+jar {
+    manifest {
+        attributes('Lint-Registry-v2': 'lintrules.CustomIssueRegistry')
+    }
+}
